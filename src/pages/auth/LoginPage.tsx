@@ -2,6 +2,7 @@ import { Button, ButtonWithIcon } from '../../core/components/Button';
 import { BsGoogle, BsTwitter, BsFacebook } from 'react-icons/bs';
 import { Card } from '../../core/components/Card';
 import { Input } from '../../core/components/Input';
+import { Link } from '../../core/components/Link';
 export const LoginPage = () => {
   return (
     <div className='min-h-screen pt-8'>
@@ -29,6 +30,10 @@ export const LoginPage = () => {
           icon={<BsTwitter></BsTwitter>}
           type='outline'
         ></ButtonWithIcon>
+        <div className='flex justify-around w-full'>
+          <Link to=''>Can&apos;t login?</Link>
+          <Link to=''>Sign Up</Link>
+        </div>
       </Card>
     </div>
   );
