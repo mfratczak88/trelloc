@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-angular": "^17.4.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.28",
