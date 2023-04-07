@@ -1,4 +1,4 @@
-import { Button } from '../../core/components/Button';
+import { Button, ButtonWithIcon } from '../../core/components/Button';
 import { BsGoogle, BsTwitter, BsFacebook } from 'react-icons/bs';
 import { Card } from '../../core/components/Card';
 import { Input } from '../../core/components/Input';
@@ -14,18 +14,21 @@ export const LoginPage = () => {
         <Input type='password' placeholder='Enter password'></Input>
         <Button type='primary'>Continue</Button>
         <p>OR</p>
-        <Button type='outline'>
-          <BsGoogle />
-          <span className='ml-2'>Continue with Google</span>
-        </Button>
-        <Button type='outline'>
-          <BsFacebook />
-          <span className='ml-2'>Continue with Facebook</span>
-        </Button>
-        <Button type='outline'>
-          <BsTwitter />
-          <span className='ml-2'>Continue with Twitter</span>
-        </Button>
+        <ButtonWithIcon
+          text='Continue with Google'
+          icon={<BsGoogle></BsGoogle>}
+          type='outline'
+        ></ButtonWithIcon>
+        <ButtonWithIcon
+          text='Continue with Facebook'
+          icon={<BsFacebook></BsFacebook>}
+          type='outline'
+        ></ButtonWithIcon>
+        <ButtonWithIcon
+          text='Continue with Twitter'
+          icon={<BsTwitter></BsTwitter>}
+          type='outline'
+        ></ButtonWithIcon>
       </Card>
     </div>
   );
