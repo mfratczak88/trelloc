@@ -25,7 +25,8 @@
         "always",
         [
           "auth",
-          "cms"
+          "cms",
+          "repo"
         ]
       ]
     }
