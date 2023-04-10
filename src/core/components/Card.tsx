@@ -3,6 +3,7 @@ import { ReactProps } from '../typings/props';
 export interface Props extends ReactProps {
   title: string;
 }
+
 export const Card = ({ title, children }: Props) => (
   <div className='px-3 mt-8'>
     <div className='card max-w-md m-auto card-bordered shadow-xl b-1'>
@@ -13,3 +14,5 @@ export const Card = ({ title, children }: Props) => (
     </div>
   </div>
 );
+
+export default Card;

@@ -12,3 +12,5 @@ export const Link = ({ children, cssClasses, ...props }: Props) => (
     {children}
   </RouterLink>
 );
+
+export default Link;
