@@ -1,33 +1,28 @@
 import classNames from 'classnames';
-import { ElementWidth, WidthBreakpoints } from '../typings/props';
+import { HTMLProps, forwardRef } from 'react';
 
-export interface Props {
-  type: 'text' | 'password';
-  placeholder: string;
+export interface Props extends HTMLProps<HTMLInputElement> {
   bordered?: boolean;
-  width?: ElementWidth;
-  maxWidth?: WidthBreakpoints;
+  error?: boolean;
 }
 
-export const Input = ({
-  type,
-  placeholder,
-  bordered = true,
-  width = 'full',
-  maxWidth = 'md',
-}: Props) => (
-  <input
-    type={type}
-    placeholder={placeholder}
-    className={classNames(
-      'input',
-      {
-        'input-bordered': bordered,
-      },
-      `max-w-${maxWidth}`,
-      `w-${width}`,
-    )}
-  ></input>
+export const Input = forwardRef<HTMLInputElement, Props>(
+  ({ error, bordered = true, ...rest }, ref) => (
+    <input
+      ref={ref}
+      {...rest}
+      className={classNames(
+        'input',
+        'w-full',
+        {
+          'input-bordered': bordered,
+        },
+        error && 'input-error',
+      )}
+    />
+  ),
 );
+
+Input.displayName = 'Input';
 
 export default Input;
