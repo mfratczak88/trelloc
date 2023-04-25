@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 export interface Props extends ReactProps {
   to: string;
-  cssClasses?: string;
+  cssClasses?: string | string[];
 }
 
 export const Link = ({ children, cssClasses, ...props }: Props) => (

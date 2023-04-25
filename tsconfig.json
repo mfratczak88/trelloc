@@ -18,7 +18,7 @@
     "baseUrl": "src/",
     "outDir": "dist",
     "rootDirs": ["src/"],
-    "types": ["vitest/globals"],
+    "types": ["vitest/globals"]
   },
   "include": ["src", "src/test"],
   "references": [{ "path": "./tsconfig.node.json" }]

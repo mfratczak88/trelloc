@@ -3,14 +3,14 @@ import { useForm } from 'react-hook-form';
 import { string, z } from 'zod';
 import { Button } from '../../core/components/Button';
 import { Card } from '../../core/components/Card';
-import Field from '../../core/components/Field';
-import { FormError } from '../../core/components/FormError';
-import FormSuccess from '../../core/components/FormSuccess';
+import Field from '../../core/components/form/Field';
 import { Input } from '../../core/components/Input';
 import Link from '../../core/components/Link';
 import { useSignup } from '../../core/hooks/useSignup';
 import { SocialAuth } from './SocialAuth';
 import { useState } from 'react';
+import { FormError } from '../../core/components/form/FormError';
+import FormSuccess from '../../core/components/form/FormSuccess';
 
 export interface FormData {
   email: string;
@@ -50,8 +50,12 @@ export const SignUpPage = () => {
 
   return (
     <Card title='Sign up to Trelloc'>
-      {error && <FormError error={'Account already exists'} />}
-      {!loading && signedUp && <FormSuccess message='Please check your email' />}
+      {error ? (
+        <FormError error={'Account already exists'} />
+      ) : (
+        !loading && signedUp && <FormSuccess message='Please check your email' />
+      )}
+
       <form
         onSubmit={handleSubmit(({ email, password }) => onSignUp(email, password))}
         className='flex flex-col w-full gap-3'

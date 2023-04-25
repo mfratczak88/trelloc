@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { ElementWidth, WidthBreakpoints } from '../typings/props';
+import { ElementWidth, WidthBreakpoints } from '../../typings/props';
 import FieldValidationError from './FieldValidationError';
 
 export interface Props {
